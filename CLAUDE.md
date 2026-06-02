@@ -3,6 +3,14 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Validation
+
+Before applying any configuration change, verify the flake is valid:
+
+```sh
+nix flake check
+```
+
 ## Applying Configuration
 
 To activate the home configuration for the current user and host:
@@ -10,6 +18,8 @@ To activate the home configuration for the current user and host:
 ```sh
 nix run home-manager/release-26.05 -- switch --flake .#$(whoami)@$(hostname -s)
 ```
+
+> **Note:** This command mutates the live environment. It should only be run by the user, never autonomously by an agent.
 
 To update flake inputs (e.g., nixpkgs, home-manager):
 
@@ -44,6 +54,16 @@ yamllint --format github --strict .
 1. Add an entry to `homeConfigurations` in `flake.nix` with the `"username@hostname"` key.
 2. Create `home/<user>/<host>.nix` (import `./global`, set `home.homeDirectory` and `home.stateVersion`).
 3. Create `home/<user>/global/default.nix` for user-specific packages, git config, etc.
+
+## Commit Style
+
+Use [Conventional Commits](https://www.conventionalcommits.org/). Capitalize the first word after the type prefix:
+
+```
+docs: Add validation step
+feat: Add new host config
+chore: Update nixpkgs input
+```
 
 ## CI / Release
 
