@@ -55,6 +55,16 @@ yamllint --format github --strict .
 2. Create `home/<user>/<host>.nix` (import `./global`, set `home.homeDirectory` and `home.stateVersion`).
 3. Create `home/<user>/global/default.nix` for user-specific packages, git config, etc.
 
+## Commit Style
+
+Use [Conventional Commits](https://www.conventionalcommits.org/). Capitalize the first word after the type prefix:
+
+```
+docs: Add validation step
+feat: Add new host config
+chore: Update nixpkgs input
+```
+
 ## CI / Release
 
 - **build** workflow: runs `yamllint` on PRs and pushes to `main`, plus weekly on Wednesdays.
