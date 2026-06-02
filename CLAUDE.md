@@ -3,6 +3,14 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Validation
+
+Before applying any configuration change, verify the flake is valid:
+
+```sh
+nix flake check
+```
+
 ## Applying Configuration
 
 To activate the home configuration for the current user and host:
