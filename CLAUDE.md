@@ -19,6 +19,8 @@ To activate the home configuration for the current user and host:
 nix run home-manager/release-26.05 -- switch --flake .#$(whoami)@$(hostname -s)
 ```
 
+> **Note:** This command mutates the live environment. It should only be run by the user, never autonomously by an agent.
+
 To update flake inputs (e.g., nixpkgs, home-manager):
 
 ```sh
