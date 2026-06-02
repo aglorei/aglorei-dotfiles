@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 To activate the home configuration for the current user and host:
 
 ```sh
-nix run home-manager/release-25.05 -- switch --flake .#$(whoami)@$(hostname -s)
+nix run home-manager/release-26.05 -- switch --flake .#$(whoami)@$(hostname -s)
 ```
 
 To update flake inputs (e.g., nixpkgs, home-manager):
