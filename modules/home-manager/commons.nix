@@ -100,6 +100,10 @@
     ".tmux.conf".source = ./assets/tmux/tmux.conf;
   };
 
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
+
   # Home-Manager
   programs.home-manager.enable = true;
 
