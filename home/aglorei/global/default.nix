@@ -16,10 +16,6 @@
 
   home.username = "aglorei";
 
-  home.packages = [
-    pkgs.unstable.aichat
-  ];
-
   # Cryptography
   programs.gpg.enable = true;
 
