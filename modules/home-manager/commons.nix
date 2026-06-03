@@ -16,9 +16,6 @@
     # Containers
     pkgs.kubectl
 
-    # Cryptography
-    pkgs.gnupg
-
     # Diagnostic
     pkgs.btop
     pkgs.fastfetch
@@ -39,21 +36,12 @@
     # NodeJS
     pkgs.nodejs
 
-    # Prompt
-    pkgs.oh-my-zsh
-
     # Python
     pkgs.poetry
     pkgs.python3
 
     # Rust
     pkgs.cargo
-
-    # SCM
-    pkgs.git
-
-    # Shell
-    pkgs.zsh
 
     # Terminal
     pkgs.tmux

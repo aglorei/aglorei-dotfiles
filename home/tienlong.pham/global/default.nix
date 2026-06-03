@@ -15,7 +15,6 @@
   };
 
   home.username = "tienlong.pham";
-  home.homeDirectory = "/Users/${config.home.username}";
 
   # Cryptography
   programs.gpg.enable = true;
