@@ -27,9 +27,9 @@
   # SCM
   programs.git = {
     enable = true;
-    userName = config.home.username;
-    userEmail = "10876966+aglorei@users.noreply.github.com";
-    extraConfig = {
+    settings = {
+      user.name = config.home.username;
+      user.email = "10876966+aglorei@users.noreply.github.com";
       init.defaultBranch = "main";
       commit.gpgSign = true;
       core.editor = "nvim";
@@ -41,6 +41,7 @@
   # SSH
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
     includes = ["config.local"];
   };
 }

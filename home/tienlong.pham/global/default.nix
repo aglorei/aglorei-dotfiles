@@ -29,7 +29,7 @@
   programs.git = {
     enable = true;
     includes = [{path = "${config.xdg.configHome}/git/config.local";}];
-    extraConfig = {
+    settings = {
       init.defaultBranch = "main";
       core.editor = "nvim";
       core.excludesFile = "${config.xdg.configHome}/git/ignore";
@@ -39,6 +39,7 @@
   # SSH
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
     includes = ["config.local"];
   };
 }
