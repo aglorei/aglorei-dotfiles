@@ -39,8 +39,6 @@
   # SSH
   programs.ssh = {
     enable = true;
-    userKnownHostsFile = "/dev/null";
-    extraConfig = "StrictHostKeyChecking no";
     includes = ["config.local"];
   };
 }

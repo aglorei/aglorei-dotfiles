@@ -34,15 +34,13 @@
       commit.gpgSign = true;
       core.editor = "nvim";
       core.excludesFile = "${config.xdg.configHome}/git/ignore";
-      user.signing.key = "ED8839A2";
+      user.signing.key = "E9D93DFD65E441AC3F30E71F7C210B28ED8839A2";
     };
   };
 
   # SSH
   programs.ssh = {
     enable = true;
-    userKnownHostsFile = "/dev/null";
-    extraConfig = "StrictHostKeyChecking no";
     includes = ["config.local"];
   };
 }
