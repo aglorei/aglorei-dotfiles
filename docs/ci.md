@@ -8,7 +8,7 @@
 | `build` | PR to `main`, push to `main`, weekly (Wed) | `yamllint`, `nix-flake-check` |
 | `deploy` | `build` completes on `main` | `release-please` |
 | `claude-code-review` | PR opened/updated | `claude-review` |
-| `claude` | Issue/PR comments and reviews mentioning `@claude` | `claude` |
+| `claude` | Issues opened/assigned, and issue/PR comments and reviews mentioning `@claude` | `claude` |
 
 ## CI/CD Flow
 

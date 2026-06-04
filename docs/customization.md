@@ -18,10 +18,10 @@ Starship is configured directly in `commons.nix` via `programs.starship.settings
 
 ## Neovim (LazyVim)
 
-Entry point: `assets/nvim/init.lua` bootstraps [LazyVim](https://www.lazyvim.org/).
+Entry point: `modules/home-manager/assets/nvim/init.lua` bootstraps [LazyVim](https://www.lazyvim.org/).
 
 ```
-assets/nvim/
+modules/home-manager/assets/nvim/
   init.lua               # LazyVim bootstrap
   lua/
     config/

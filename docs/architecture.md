@@ -63,12 +63,12 @@ Raw configuration files symlinked into place at activation:
 
 | Tool | Asset path | Destination |
 |---|---|---|
-| btop | `assets/btop/` | `$XDG_CONFIG_HOME/btop/` |
-| fastfetch | `assets/fastfetch/` | `$XDG_CONFIG_HOME/fastfetch/` |
-| Neovim | `assets/nvim/` | `$XDG_CONFIG_HOME/nvim/` |
-| WezTerm | `assets/wezterm/wezterm.lua` | `$XDG_CONFIG_HOME/wezterm/wezterm.lua` |
-| tmux | `assets/tmux/tmux.conf` | `~/.tmux.conf` |
-| git ignore | `assets/git/ignore` | `$XDG_CONFIG_HOME/git/ignore` |
+| btop | `modules/home-manager/assets/btop/` | `$XDG_CONFIG_HOME/btop/` |
+| fastfetch | `modules/home-manager/assets/fastfetch/` | `$XDG_CONFIG_HOME/fastfetch/` |
+| Neovim | `modules/home-manager/assets/nvim/` | `$XDG_CONFIG_HOME/nvim/` |
+| WezTerm | `modules/home-manager/assets/wezterm/wezterm.lua` | `$XDG_CONFIG_HOME/wezterm/wezterm.lua` |
+| tmux | `modules/home-manager/assets/tmux/tmux.conf` | `~/.tmux.conf` |
+| git ignore | `modules/home-manager/assets/git/ignore` | `$XDG_CONFIG_HOME/git/ignore` |
 
 Starship is configured directly in `commons.nix` via `programs.starship.settings`; there is no linked file.
 
