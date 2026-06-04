@@ -39,35 +39,25 @@ yamllint --format github --strict .
 
 ## Architecture
 
-**`flake.nix`** is the entry point. It defines `homeConfigurations` as a map of `"username@hostname"` strings to Home Manager configurations built via `mkHomeConfig { system, modulePaths }`. Each entry composes modules from `home/<user>/` and `modules/home-manager/`.
+Layers: `flake.nix` → `home/<user>/<host>.nix` → `home/<user>/global/default.nix` → `modules/home-manager/commons.nix` → `modules/home-manager/assets/`. Do not update `home.stateVersion` after initial deployment. Unstable packages are available as `pkgs.unstable.<name>` via the overlay in `overlays/default.nix`.
 
-**`home/<user>/<host>.nix`** is the per-host config. It imports `./global` and sets `home.homeDirectory` and `home.stateVersion`. Do not update `home.stateVersion` after initial deployment — it should reflect the NixOS release when that user's config was first activated, not the current release.
-
-**`home/<user>/global/default.nix`** imports `outputs.homeManagerModules.commons` and sets user-level config: git (with GPG signing), GPG agent (`pinentry-curses`), and SSH. SSH is configured with `enableDefaultConfig = false` and `includes = ["config.local"]` so machine-specific host entries can live in an untracked `~/.ssh/config.local`.
-
-**`modules/home-manager/commons.nix`** is the shared base. It installs all common packages (`home.packages`), links asset files into `$XDG_CONFIG_HOME` via `home.file`, and configures zsh (with Oh My Zsh), starship, and shell aliases.
-
-**`modules/home-manager/assets/`** contains raw config files for tools (Neovim/LazyVim, WezTerm, tmux, btop, fastfetch, git ignore). These are symlinked into place by `commons.nix`.
-
-**`overlays/default.nix`** defines the `unstable-packages` overlay, which exposes `pkgs.unstable` backed by `nixpkgs-unstable`. Access unstable packages in any module as `pkgs.unstable.<name>`. The overlay is applied per-user in `home/<user>/global/default.nix` via `nixpkgs.overlays`.
+See [`docs/architecture.md`](docs/architecture.md) for the full walkthrough.
 
 ## Adding a New Host or User
 
-1. Add an entry to `homeConfigurations` in `flake.nix` with the `"username@hostname"` key.
-2. Create `home/<user>/<host>.nix` (import `./global`, set `home.homeDirectory` and `home.stateVersion`).
-3. Create `home/<user>/global/default.nix` for user-specific packages, git config, etc. Import `outputs.homeManagerModules.commons` and apply `outputs.overlays.unstable-packages`.
+1. Add `"username@hostname"` to `homeConfigurations` in `flake.nix`.
+2. Create `home/<user>/<host>.nix`: import `./global`, set `home.homeDirectory` and `home.stateVersion`.
+3. Create `home/<user>/global/default.nix`: import `outputs.homeManagerModules.commons`, apply `outputs.overlays.unstable-packages`.
+
+See [`docs/onboarding.md`](docs/onboarding.md) for the full procedure with examples.
 
 ## Commit Style
 
-Use [Conventional Commits](https://www.conventionalcommits.org/). Capitalize the first word after the type prefix:
-
-```
-docs: Add validation step
-feat: Add new host config
-chore: Update nixpkgs input
-```
+Use [Conventional Commits](https://www.conventionalcommits.org/). Capitalize the first word after the type prefix: `docs: Add validation step`. See [`docs/style.md`](docs/style.md) for the full style guide including Nix conventions.
 
 ## CI / Release
 
-- **build** workflow: runs `yamllint` on PRs and pushes to `main`, plus weekly on Wednesdays.
-- **deploy** workflow: triggers `release-please` after a successful build on `main` to manage changelog and releases.
+- **build** workflow: runs `yamllint` and `nix flake check` on PRs and pushes to `main`, plus weekly on Wednesdays.
+- **deploy** workflow: triggers `release-please` after a successful `build` on `main`.
+
+See [`docs/ci.md`](docs/ci.md) for the full workflow inventory.

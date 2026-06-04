@@ -8,11 +8,10 @@ Configurations that I use in a [flakes](https://wiki.nixos.org/wiki/Flakes) appr
 ### Editor
 
 - [Neovim](https://neovim.io/) with [LazyVim](https://www.lazyvim.org/)
-- Custom plugins and configuration in `modules/home-manager/assets/nvim/`
 
 ### Terminal
 
-- [WezTerm](https://wezfurlong.org/wezterm/) (see `modules/home-manager/assets/wezterm/wezterm.lua`)
+- [WezTerm](https://wezfurlong.org/wezterm/)
 
 ### Font
 
@@ -28,12 +27,16 @@ Configurations that I use in a [flakes](https://wiki.nixos.org/wiki/Flakes) appr
 
 - [Kanagawa](https://github.com/rebelot/kanagawa.nvim) (for Neovim and terminal)
 
+See [docs/customization.md](docs/customization.md) for configuration details.
+
 ## Structure
 
 - `flake.nix`: Flake entrypoint, defines system/home-manager configurations.
 - `modules/home-manager/`: Home Manager modules and assets (Neovim, WezTerm, etc).
 - `home/<user>/<host>.nix`: Per-user, per-host Home Manager configs.
-- `pkgs/` and `overlays/`: Custom packages and overlays.
+- `overlays/`: Custom Nix overlays.
+
+See [docs/architecture.md](docs/architecture.md) for a full architecture walkthrough.
 
 ## Installation
 
@@ -61,30 +64,9 @@ nix-channel --update
 
 Optionally, enable flakes as an experimental feature [without additional command-line options](https://wiki.nixos.org/wiki/Flakes#Other_Distros,_without_Home-Manager).
 
-### Step 3: Initialize Configuration
+### Steps 3–4: Configure and Activate
 
-Include a `homeConfigurations` username and host combination (i.e., `echo $(whoami)@$(hostname -s)`) in [flake.nix](./flake.nix).
-
-```nix
-homeConfigurations = {
-  # Replace with your username@hostname
-  "your-username@your-hostname" = mkHomeConfig {
-    system = "aarch64-darwin"; # or x86_64-darwin/linux
-    modulePaths = [
-      ./home/your-username/your-hostname.nix
-      # > include additional nixes <
-    ];
-  };
-};
-```
-
-### Step 4: Activate Configuration
-
-Apply the home configuration with a username and host combination.
-
-```sh
-nix run home-manager/release-26.05 -- switch --flake .#$(whoami)@$(hostname -s)
-```
+See [docs/onboarding.md](docs/onboarding.md) for adding a host configuration and activating it.
 
 ## Acknowledgements
 
