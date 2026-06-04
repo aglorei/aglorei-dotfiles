@@ -37,7 +37,7 @@ programs.git = { enable = true; settings = { ... }; };
 # good
 { pkgs, config, ... }: { ... }
 
-# avoid — lists unused args
+# avoid: lists unused args
 { pkgs, config, lib, inputs, outputs, ... }: { ... }
 ```
 

@@ -21,7 +21,7 @@ flake.nix
 
 ## flake.nix
 
-Defines two inputs — `nixpkgs` (stable) and `nixpkgs-unstable` — and the `mkHomeConfig` helper, which wraps `homeManagerConfiguration` and accepts a `system` string and a list of `modulePaths`. Each entry in `homeConfigurations` is a `"username@hostname"` string mapped to a `mkHomeConfig` call.
+Defines two inputs, `nixpkgs` (stable) and `nixpkgs-unstable`, and the `mkHomeConfig` helper, which wraps `homeManagerConfiguration` and accepts a `system` string and a list of `modulePaths`. Each entry in `homeConfigurations` is a `"username@hostname"` string mapped to a `mkHomeConfig` call.
 
 ## home/\<user\>/\<host\>.nix
 
@@ -40,7 +40,7 @@ The per-host file has two jobs: import `./global` and set the two host-specific 
 
 ## home/\<user\>/global/default.nix
 
-A personal drop-in. The only required wiring is importing `outputs.homeManagerModules.commons` and applying `outputs.overlays.unstable-packages`. Everything else — git identity, GPG agent, SSH config, additional packages — is user-defined.
+A personal drop-in. The only required wiring is importing `outputs.homeManagerModules.commons` and applying `outputs.overlays.unstable-packages`. Everything else (git identity, GPG agent, SSH config, additional packages) is user-defined.
 
 ```nix
 { pkgs, outputs, ... }: {
@@ -70,7 +70,7 @@ Raw configuration files symlinked into place at activation:
 | tmux | `assets/tmux/tmux.conf` | `~/.tmux.conf` |
 | git ignore | `assets/git/ignore` | `$XDG_CONFIG_HOME/git/ignore` |
 
-Starship is configured directly in `commons.nix` via `programs.starship.settings` — there is no linked file.
+Starship is configured directly in `commons.nix` via `programs.starship.settings`; there is no linked file.
 
 ## overlays/default.nix
 

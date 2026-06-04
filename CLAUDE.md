@@ -46,8 +46,8 @@ See [`docs/architecture.md`](docs/architecture.md) for the full walkthrough.
 ## Adding a New Host or User
 
 1. Add `"username@hostname"` to `homeConfigurations` in `flake.nix`.
-2. Create `home/<user>/<host>.nix` — import `./global`, set `home.homeDirectory` and `home.stateVersion`.
-3. Create `home/<user>/global/default.nix` — import `outputs.homeManagerModules.commons`, apply `outputs.overlays.unstable-packages`.
+2. Create `home/<user>/<host>.nix`: import `./global`, set `home.homeDirectory` and `home.stateVersion`.
+3. Create `home/<user>/global/default.nix`: import `outputs.homeManagerModules.commons`, apply `outputs.overlays.unstable-packages`.
 
 See [`docs/onboarding.md`](docs/onboarding.md) for the full procedure with examples.
 

@@ -14,7 +14,7 @@
 | tmux | `modules/home-manager/assets/tmux/tmux.conf` | `~/.tmux.conf` |
 | git ignore | `modules/home-manager/assets/git/ignore` | `$XDG_CONFIG_HOME/git/ignore` |
 
-Starship is configured directly in `commons.nix` via `programs.starship.settings` — there is no standalone config file to edit.
+Starship is configured directly in `commons.nix` via `programs.starship.settings`; there is no standalone config file to edit.
 
 ## Neovim (LazyVim)
 
