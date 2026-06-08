@@ -3,12 +3,15 @@
   "extends": ["config:recommended"],
   "enabledManagers": ["nix"],
   "nix": {
-    "fileMatch": ["(^|/)flake\\.nix$"]
+    "managerFilePatterns": [
+      "/(^|/)flake\\.nix$/"
+    ]
   },
   "vulnerabilityAlerts": {
     "enabled": false
   },
   "lockFileMaintenance": {
-    "enabled": true
+    "enabled": true,
+    "schedule": ["at any time"]
   }
 }
