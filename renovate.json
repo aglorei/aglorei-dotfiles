@@ -3,7 +3,9 @@
   "extends": ["config:recommended"],
   "enabledManagers": ["nix"],
   "nix": {
-    "fileMatch": ["(^|/)flake\\.nix$"]
+    "managerFilePatterns": [
+      "/(^|/)flake\\.nix$/"
+    ]
   },
   "vulnerabilityAlerts": {
     "enabled": false
