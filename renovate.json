@@ -1,5 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
-  "enabledManagers": ["nix"]
+  "enabledManagers": ["nix"],
+  "nix": {
+    "fileMatch": ["(^|/)flake\\.nix$"]
+  },
+  "vulnerabilityAlerts": {
+    "enabled": false
+  }
 }
