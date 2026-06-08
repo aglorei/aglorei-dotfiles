@@ -53,16 +53,9 @@ Clone the repository to your directory of choosing.
 git clone https://github.com/aglorei/dotfiles $HOME/github.com/aglorei/dotfiles
 ```
 
-### Step 2: Configure Nix
+### Step 2: Enable Flakes
 
-Add your channel of choice, update Nixpkgs.
-
-```sh
-nix-channel --add https://nixos.org/channels/nixpkgs-unstable
-nix-channel --update
-```
-
-Optionally, enable flakes as an experimental feature [without additional command-line options](https://wiki.nixos.org/wiki/Flakes#Other_Distros,_without_Home-Manager).
+If flakes are not already enabled, opt in as an experimental feature [without additional command-line options](https://wiki.nixos.org/wiki/Flakes#Other_Distros,_without_Home-Manager).
 
 ### Steps 3–4: Configure and Activate
 
