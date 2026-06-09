@@ -73,10 +73,11 @@ The overlay is applied in each user's `global/default.nix`. See [`docs/architect
 
 ## GitHub Copilot CLI
 
-Installed from `pkgs.github-copilot-cli`. Authenticate once with:
+Installed from `pkgs.github-copilot-cli`. Authenticate and grant the required Copilot scope:
 
 ```sh
 gh auth login
+gh auth refresh -h github.com -s copilot
 ```
 
 Then use:
