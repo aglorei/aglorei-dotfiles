@@ -11,6 +11,7 @@
     pkgs.awscli2
     pkgs.azure-cli
     pkgs.gh
+    pkgs.github-copilot-cli
     pkgs.google-cloud-sdk
 
     # Containers

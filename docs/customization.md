@@ -70,3 +70,18 @@ home.packages = [
 ```
 
 The overlay is applied in each user's `global/default.nix`. See [`docs/architecture.md`](architecture.md) for details.
+
+## GitHub Copilot CLI
+
+Installed from `pkgs.github-copilot-cli`. Authenticate once with:
+
+```sh
+gh auth login
+```
+
+Then use:
+
+```sh
+gh copilot suggest "create a tarball of the current directory"
+gh copilot explain "git rebase -i HEAD~3"
+```
