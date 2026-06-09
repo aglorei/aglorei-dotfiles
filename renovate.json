@@ -4,7 +4,7 @@
   "enabledManagers": ["nix"],
   "nix": {
     "managerFilePatterns": [
-      "/(^|/)flake\\.nix$/"
+      "**/flake.nix"
     ]
   },
   "vulnerabilityAlerts": {
