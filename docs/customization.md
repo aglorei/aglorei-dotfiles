@@ -73,16 +73,16 @@ The overlay is applied in each user's `global/default.nix`. See [`docs/architect
 
 ## GitHub Copilot CLI
 
-Installed from `pkgs.github-copilot-cli`. Authenticate and grant the required Copilot scope:
+Installed from `pkgs.github-copilot-cli`. The package provides the `copilot` binary, a standalone
+AI coding agent. Authenticate once with:
 
 ```sh
-gh auth login
-gh auth refresh --hostname github.com --scopes copilot
+copilot login
 ```
 
 Then use:
 
 ```sh
-gh copilot suggest "create a tarball of the current directory"
-gh copilot explain "git rebase -i HEAD~3"
+copilot                                         # interactive session
+copilot --prompt "fix the bug in main.go"       # non-interactive
 ```
