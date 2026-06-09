@@ -70,3 +70,19 @@ home.packages = [
 ```
 
 The overlay is applied in each user's `global/default.nix`. See [`docs/architecture.md`](architecture.md) for details.
+
+## GitHub Copilot CLI
+
+Installed from `pkgs.github-copilot-cli`. The package provides the `copilot` binary, a standalone
+AI coding agent. Authenticate once with:
+
+```sh
+copilot login
+```
+
+Then use:
+
+```sh
+copilot                                         # interactive session
+copilot --prompt "fix the bug in main.go"       # non-interactive
+```
