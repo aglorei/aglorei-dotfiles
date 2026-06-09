@@ -77,7 +77,7 @@ Installed from `pkgs.github-copilot-cli`. Authenticate and grant the required Co
 
 ```sh
 gh auth login
-gh auth refresh -h github.com -s copilot
+gh auth refresh --hostname github.com --scopes copilot
 ```
 
 Then use:
