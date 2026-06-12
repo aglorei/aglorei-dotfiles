@@ -51,6 +51,10 @@ See [`docs/architecture.md`](docs/architecture.md) for the full walkthrough.
 
 See [`docs/onboarding.md`](docs/onboarding.md) for the full procedure with examples.
 
+## VS Code (unmanaged machines)
+
+`modules/home-manager/assets/vscode/` holds a portable, vim-first VS Code configuration applied manually (raw URL downloads) on machines without nix. It is intentionally not wired into home-manager yet. See [`docs/vscode.md`](docs/vscode.md) for setup.
+
 ## Commit Style
 
 Use [Conventional Commits](https://www.conventionalcommits.org/). Capitalize the first word after the type prefix: `docs: Add validation step`. See [`docs/style.md`](docs/style.md) for the full style guide including Nix conventions.
