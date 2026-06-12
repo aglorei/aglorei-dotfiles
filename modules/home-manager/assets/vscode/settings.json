@@ -1,0 +1,13 @@
+{
+  "editor.cursorSurroundingLines": 8,
+  "editor.fontFamily": "'Mononoki Nerd Font', Consolas, 'Cascadia Code', monospace",
+  "editor.inlineSuggest.enabled": true,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.scrollBeyondLastLine": false,
+  "extensions.ignoreRecommendations": true,
+  "files.autoSave": "off",
+  "telemetry.telemetryLevel": "off",
+  "update.mode": "manual",
+  "workbench.startupEditor": "none"
+}
