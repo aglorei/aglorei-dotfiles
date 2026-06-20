@@ -44,6 +44,9 @@
     # Rust
     pkgs.cargo
 
+    # SCM
+    pkgs.pre-commit
+
     # Terminal
     pkgs.tmux
 
