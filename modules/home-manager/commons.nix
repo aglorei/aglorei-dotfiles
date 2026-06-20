@@ -49,6 +49,7 @@
 
     # Terraform
     pkgs.terraform
+    pkgs.terraform-docs
 
     # Utility
     pkgs.fasd
