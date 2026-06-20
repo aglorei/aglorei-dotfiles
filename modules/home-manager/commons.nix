@@ -44,11 +44,15 @@
     # Rust
     pkgs.cargo
 
+    # SCM
+    pkgs.pre-commit
+
     # Terminal
     pkgs.tmux
 
     # Terraform
     pkgs.terraform
+    pkgs.terraform-docs
 
     # Utility
     pkgs.fasd
